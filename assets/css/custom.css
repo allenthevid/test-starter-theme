@@ -88,7 +88,7 @@
     }
 
     .rotating-badge {
-        @apply absolute 3xl:top-[144px] left-[47.5%] 3xl:w-[175px] 3xl:h-[175px] cursor-pointer z-10;
+        @apply absolute bottom-[-40px] left-0 lg:top-[50px] 2xl:top-[70px] 3xl:top-[144px] lg:left-[47.5%] lg:bottom-auto w-[117px] h-[117px] 3xl:w-[175px] 3xl:h-[175px] cursor-pointer z-10;
     }
 
     .badge-text {

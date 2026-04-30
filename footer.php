@@ -1,4 +1,4 @@
-<footer class="">
+<footer class="border-t border-t-[#262626]">
     <div class="top-footer py-[50px] lg:py-[60px] bg-[#141414]">
         <div class="container mx-auto">
             <div class="footer-content 2xl:flex items-start justify-between 2xl:gap-[101px] 3xl:gap-[195px]">

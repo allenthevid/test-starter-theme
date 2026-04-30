@@ -24,16 +24,16 @@ $ctaRotatingBadgeLink = get_field( 'floating_button' );
 // ---------------------------------------------------------------------------
 $wrapper_attributes = get_block_wrapper_attributes(
     [
-        'class' => 'test-starter-hero relative overflow-hidden bg-dark',
+        'class' => 'test-starter-hero relative overflow-hidden bg-dark pt-[40px] lg:pt-0',
     ]
 );
 ?>
 
 <section <?php echo $wrapper_attributes; ?>>
     <div class="container mx-auto">
-        <div class="lg:flex items-center justify-between flex-col lg:flex-row">
+        <div class="flex items-center justify-between flex-col-reverse lg:flex-row">
 
-            <div class="left-wrapper outer-wrapper flex py-[144px] lg:w-[calc(50%-20px)] 3xl:w-[calc(50%-40px)]">
+            <div class="left-wrapper outer-wrapper flex py-[40px] lg:py-[144px] lg:w-[calc(50%-20px)] 3xl:w-[calc(50%-40px)]">
                 <div class="flex flex-col items-start gap-[40px] lg:gap-[50px] 2xl:gap-[60px] w-full">
 
                     <?php if ( $heading || $description ) : ?>
@@ -95,10 +95,38 @@ $wrapper_attributes = get_block_wrapper_attributes(
             </div>
 
             <?php if ( $featured_image ) : ?>
-                <div class="right-wrapper lg:w-[calc(50%-20px)] 3xl:w-[calc(50%-40px)] hero-image lg:absolute top-0 right-0 bottom-0 border border-[#262626] rounded-[12px] overflow-hidden lg:rounded-none lg:border-0">
+                <div class="right-wrapper lg:w-[calc(50%-20px)] 3xl:w-[calc(50%-40px)] hero-image relative lg:absolute top-0 right-0 bottom-0 border border-[#262626] rounded-[12px] lg:overflow-hidden lg:rounded-none lg:border-0">
                     <img src="<?php echo esc_url( $featured_image['url'] ); ?>"
                          alt="<?php echo esc_attr( $featured_image['alt'] ); ?>"
                          class="w-full h-full object-cover object-center">
+
+                    
+                    <?php if ( $enableRotatingBadge && $ctaRotatingBadgeLink ) : ?>
+                        <a href="<?php echo esc_url( $ctaRotatingBadgeLink['url'] ); ?>"
+                            target="<?php echo esc_attr( $ctaRotatingBadgeLink['target'] ?: '_self' ); ?>"
+                            class="rotating-badge lg:hidden">
+
+                                <div class="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
+                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/arrow.svg' ); ?>"
+                                        alt=""
+                                        class="w-[79px] h-[79px]">
+                                </div>
+
+                                <svg class="badge-text" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="175" height="175">
+                                    <defs>
+                                        <path id="circle-path" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                                    </defs>
+                                    <circle cx="100" cy="100" r="98" fill="#111118"/>
+                                    <circle cx="100" cy="100" r="97" fill="none" stroke="#262626" stroke-width="1"/>
+                                    <text fill="white" font-size="15.5" font-family="inherit" letter-spacing="8.5" font-weight="500">
+                                        <textPath href="#circle-path" startOffset="0%">
+                                            <?php echo esc_html( $ctaRotatingBadgeLink['title'] ); ?>
+                                        </textPath>
+                                    </text>
+                                </svg>
+
+                            </a>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
 
@@ -107,7 +135,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
         <?php if ( $enableRotatingBadge && $ctaRotatingBadgeLink ) : ?>
             <a href="<?php echo esc_url( $ctaRotatingBadgeLink['url'] ); ?>"
                target="<?php echo esc_attr( $ctaRotatingBadgeLink['target'] ?: '_self' ); ?>"
-               class="rotating-badge">
+               class="rotating-badge hidden lg:block">
 
                 <div class="absolute inset-0 flex items-center justify-center z-[2] pointer-events-none">
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/arrow.svg' ); ?>"
