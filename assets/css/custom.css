@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom styles */
+@layer base {
+  /* Sticky footer layout */
+  html {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+  p {
+    @apply text-[14px] lg:text-[16px] 3xl:text-[18px] text-[#999999] font-medium;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-secondary font-semibold mb-[24px];
+  }
+
+  h1 {
+    @apply text-[28px] lg:text-[46px] 3xl:text-[60px] leading-[40px] lg:leading-[120%];
+  }
+
+  h2 {
+    @apply text-[24px] lg:text-[30px] 3xl:text-[40px] leading-[150%] font-bold;
+  }
+
+  a {
+    @apply text-secondary text-[14px] lg:text-[18px] font-medium hover:text-accent transition-colors duration-300 ease-in-out;
+  }
+}
+
+@layer components {
+    .container {
+        @apply mx-auto px-4 w-full !max-w-[1312px] 3xl:!max-w-[1628px];
+    }
+    .estatein-form {
+        @apply max-w-xl;
+    }
+    .estatein-form .input-wrapper {
+        @apply w-full bg-transparent border border-[#262626] rounded-[12px] py-[14px] px-[20px] lg:py-[18px] lg:px-[24px] flex items-center;
+    }
+    .estatein-form .input-wrapper input[type="email"] {
+        @apply w-full bg-transparent border-none focus:outline-0 focus:border-0 p-0 text-secondary text-[14px] pl-[34px] lg:text-[18px] placeholder-[#999999];
+        box-shadow: none
+    }
+    .estatein-form .input-wrapper {
+        @apply relative;
+    }
+    .estatein-form .input-icon {
+        @apply absolute left-[24px] top-1/2 transform -translate-y-1/2 flex items-center justify-center pointer-events-none;
+        width: 20px;
+        height: 18px;
+        background-image: url('../images/envelope-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .estatein-form .submit-btn {
+        @apply bg-transparent text-white p-[8px] rounded-[6px] w-[24px] h-[24px] lg:w-[30px] lg:h-[30px] border-none cursor-pointer transition-all duration-300;
+        background-image: url('../images/paper-plane-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .estatein-form .submit-btn:hover {
+        filter: drop-shadow(0 0 8px var(--color-accent));
+    }
+
+
+    .btn-primary {
+        @apply bg-[#141414] border border-[#262626] rounded-[10px] py-[14px] px-[24px] text-white text-[18px] font-medium;
+    }
+
+    .btn-accent {
+        @apply bg-accent rounded-[10px] py-[14px] px-[24px] text-white text-[18px] font-medium hover:bg-primary;
+    }
+
+    .rotating-badge {
+        @apply absolute 3xl:top-[144px] left-[47.5%] 3xl:w-[175px] 3xl:h-[175px] cursor-pointer z-10;
+    }
+
+    .badge-text {
+        @apply w-full h-full rounded-full;
+        animation: spin 10s linear infinite;
+    }
+
+    .badge-arrow {
+        @apply absolute inset-0 flex items-center justify-center z-[2] pointer-events-none;
+    }
+
+    .badge-arrow img {
+        @apply w-[79px] h-[79px];
+    }
+
+    .rotating-badge:hover .badge-text {
+        animation-duration: 4s;
+    }
+    
+  
+}
+
+@layer utilities {
+    header .cta-wrapper a {
+        @apply bg-[#141414] border border-[#262626] rounded-[10px] py-[14px] px-[24px] text-white text-[18px] font-medium;
+    }
+    #menu-header {
+        @apply flex items-center justify-center gap-[30px] ;
+    }
+    #menu-header .menu-item a {
+        @apply text-secondary text-[18px] font-medium;
+    }
+    #menu-header .current-menu-item > a {
+        @apply bg-[#141414] border border-[#262626] rounded-[10px] py-[14px] px-[24px];
+    }
+
+    .mobile-nav .current-menu-item > a{
+        @apply text-accent;
+    }
+
+    /* Social Media Icons */
+    .social-media-links {
+        @apply flex items-center gap-[24px];
+    }
+
+    .social-icon {
+        @apply h-[60px] w-[60px] lg:w-[52px] lg:h-[52px] p-[14px] rounded-full text-secondary bg-[#141414] transition-all duration-300 ease-in-out hover:text-accent hover:bg-[#262626];
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icon i {
+        @apply text-[20px] 2xl:text-[24px];
+    }
+
+
+    /* Footer Links */
+    .footer-column a {
+        @apply text-[#999999] text-[14px] transition-colors duration-300 hover:text-accent;
+    }
+
+    footer .footer-links-grid a {
+        @apply text-secondary text-[18px] font-medium xl:whitespace-nowrap;
+    }
+
+    /* Footer Masonry Layout */
+    .footer-masonry-columns {
+        column-count: 2;
+        column-gap: 24px;
+    }
+
+    .footer-masonry-columns .footer-column {
+        break-inside: avoid;
+        margin-bottom: 32px;
+    }
+
+    @media (min-width: 768px) {
+        .footer-masonry-columns {
+            column-count: 3;
+            column-gap: 32px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer-masonry-columns {
+            column-count: 5;
+            column-gap: 40px;
+        }
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu-btn {
+        @apply w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer;
+    }
+
+    .hamburger-icon {
+        @apply w-full h-full;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        @apply bg-[#1A1A1A] border-t border-[#262626] px-4 py-4 absolute top-full left-0 right-0 z-50;
+    }
+
+    .mobile-menu.show {
+        @apply block;
+    }
+
+    .mobile-nav__list {
+        @apply flex flex-col gap-4 mb-4;
+    }
+
+    .mobile-nav__list li a {
+        @apply text-secondary text-[16px] font-medium block py-2 hover:text-accent transition-colors;
+    }
+
+    .mobile-cta__list {
+        @apply flex flex-col gap-3;
+    }
+
+    .mobile-cta__list li a {
+        @apply text-secondary text-[14px] font-medium block py-2 px-4 bg-[#141414] border border-[#262626] rounded-[8px] text-center hover:bg-[#262626] transition-colors;
+    }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+
+

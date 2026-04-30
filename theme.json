@@ -1,0 +1,195 @@
+{
+  "version": 2,
+  "title": "Test Starter Theme",
+  "settings": {
+    "color": {
+      "defaultPalette": true,
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#1A1A1A",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#ffffff",
+          "name": "Secondary"
+        },
+        {
+          "slug": "accent",
+          "color": "#703BF7",
+          "name": "Accent"
+        },
+        {
+          "slug": "dark",
+          "color": "#111827",
+          "name": "Dark"
+        },
+        {
+          "slug": "light",
+          "color": "#999999",
+          "name": "Light"
+        },
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        }
+      ],
+      "gradients": [
+        {
+          "slug": "primary-to-secondary",
+          "gradient": "linear-gradient(135deg, #1A1A1A 0%, #ffffff 100%)",
+          "name": "Primary to Secondary"
+        },
+        {
+          "slug": "accent-fade",
+          "gradient": "linear-gradient(135deg, #703BF7 0%, rgba(112, 59, 247, 0) 100%)",
+          "name": "Accent Fade"
+        }
+      ]
+    },
+    "typography": {
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "0.875rem",
+          "name": "Small"
+        },
+        {
+          "slug": "regular",
+          "size": "1rem",
+          "name": "Regular"
+        },
+        {
+          "slug": "large",
+          "size": "1.25rem",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "1.5rem",
+          "name": "X-Large"
+        },
+        {
+          "slug": "xx-large",
+          "size": "2rem",
+          "name": "XX-Large"
+        },
+        {
+          "slug": "huge",
+          "size": "2.5rem",
+          "name": "Huge"
+        }
+      ],
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Urbanist\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "slug": "urbanist",
+          "name": "Urbanist"
+        },
+        {
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+          "slug": "system-font",
+          "name": "System Font"
+        },
+        {
+          "fontFamily": "Georgia, \"Times New Roman\", serif",
+          "slug": "serif",
+          "name": "Serif"
+        },
+        {
+          "fontFamily": "\"Courier New\", monospace",
+          "slug": "monospace",
+          "name": "Monospace"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        {
+          "size": "0.5rem",
+          "slug": "20",
+          "name": "Small"
+        },
+        {
+          "size": "1rem",
+          "slug": "30",
+          "name": "Medium"
+        },
+        {
+          "size": "1.5rem",
+          "slug": "40",
+          "name": "Large"
+        },
+        {
+          "size": "2rem",
+          "slug": "50",
+          "name": "X-Large"
+        },
+        {
+          "size": "3rem",
+          "slug": "60",
+          "name": "2X-Large"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1200px"
+    },
+    "useRootPaddingAwareAlignments": true
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--white)",
+      "text": "var(--wp--preset--color--dark)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--urbanist)",
+      "fontSize": "var(--wp--preset--font-size--regular)",
+      "lineHeight": "150%"
+    },
+    "spacing": {
+      "blockGap": "1rem"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontWeight": "600",
+          "lineHeight": "1.2"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--primary)"
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": "0.25rem"
+        },
+        "color": {
+          "background": "var(--wp--preset--color--primary)",
+          "text": "var(--wp--preset--color--white)"
+        }
+      },
+      "core/heading": {
+        "spacing": {
+          "margin": {
+            "bottom": "0.5em"
+          }
+        }
+      },
+      "core/paragraph": {
+        "spacing": {
+          "margin": {
+            "bottom": "1em"
+          }
+        }
+      }
+    }
+  }
+}

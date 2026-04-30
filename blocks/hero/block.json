@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/hero",
+  "title": "Hero Section",
+  "category": "layout",
+  "description": "Premium hero section with dual-column layout, CTA buttons, featured image, and statistics",
+  "keywords": ["hero", "banner", "section", "acf", "estatein"],
+  "textdomain": "test-starter-theme",
+  "acf": {
+    "renderTemplate": "render.php",
+    "mode": "preview"
+  },
+  "supports": {
+    "align": ["full"],
+    "anchor": true,
+    "jsx": true,
+    "color": false,
+    "typography": false,
+    "spacing": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview"
+    }
+  }
+}
